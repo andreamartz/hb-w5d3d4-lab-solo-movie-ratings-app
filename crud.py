@@ -22,6 +22,16 @@ def create_movie(title, overview, release_date, poster_path):
     return movie
 
 
+def create_rating(user, movie, score):
+    """Create and return a new rating."""
+
+    rating = Rating(user=user,
+                   movie=movie,
+                   score=score)
+
+    return rating
+
+
 # connect to the database when you run crud.py interactively
 if __name__ == '__main__':
     from server import app
