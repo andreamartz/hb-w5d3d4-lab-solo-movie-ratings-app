@@ -1,0 +1,17 @@
+"""CRUD operatiosns."""
+
+from model import db, User, Movie, Rating, connect_to_db
+
+
+def create_user(email, password):
+    """Create and return a new user."""
+
+    user = User(email=email, password=password)
+
+    return user
+
+
+# connect to the database when you run crud.py interactively
+if __name__ == '__main__':
+    from server import app
+    connect_to_db(app)
