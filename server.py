@@ -34,6 +34,15 @@ def show_all_movies():
 
 
 @app.route("/movies/<movie_id>")
+def show_movie(movie_id):
+    """Show details for a specific movie."""
+
+    movie = crud.get_movie_by_id(movie_id)
+
+    return render_template("movie_details.html", movie=movie)
+
+
+@app.route("/users")
 
 
 if __name__ == "__main__":
