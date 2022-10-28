@@ -43,6 +43,14 @@ def show_movie(movie_id):
 
 
 @app.route("/users")
+def show_all_users():
+    """View all users."""
+
+    users = crud.get_all_users()
+
+    return render_template("all_users.html", users=users)
+
+
 
 
 if __name__ == "__main__":
