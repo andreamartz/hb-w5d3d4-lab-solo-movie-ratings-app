@@ -24,7 +24,16 @@ def homepage():
     return render_template("homepage.html")
 
 
-# Replace this with routes and view functions!
+@app.route("/movies")
+def show_all_movies():
+    """View all movies."""
+
+    movies = crud.get_all_movies()
+
+    return render_template("all_movies.html", movies=movies)
+
+
+@app.route("/movies/<movie_id>")
 
 
 if __name__ == "__main__":
